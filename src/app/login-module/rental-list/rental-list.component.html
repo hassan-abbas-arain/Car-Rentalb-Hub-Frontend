@@ -1,0 +1,109 @@
+<section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" (click)="OnClickedHome()">GoCar</a>
+  
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li >
+              <a class="nav-link" (click)="OnClickedHome()">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="OnClickedFindCar()">Find Car</a>
+            </li>
+            <li class="nav-item" class="nav-item active">
+              <a class="nav-link" (click)="OnClickedRecodes()">Records</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="Payment()">Payments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+
+    <div class="container mt-5 pt-4">
+        <h2>Active Records</h2>
+        <table class="table table-striped" >
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Brand</th>
+              <th>Registration Number</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Total Rent</th>
+              <!-- Add more headers as needed -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of records">
+              <td>{{ record.model }}</td>
+              <td>{{ record.brand }}</td>
+              <td>{{ record.registrationNumber}}</td>
+              <td>{{ record.startDate }}</td>
+              <td>{{ record.endDate }}</td>
+              <td>{{ record.rentPerDay}}</td>
+              <!-- Add more cells as needed -->
+            </tr>
+          </tbody>
+        </table>
+      
+      </div>
+
+      <div class="container mt-5 pt-4">
+        <h2>Old Records</h2>
+        <table class="table table-striped" >
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Brand</th>
+              <th>Registration Number</th>
+              <th>Start Date</th>
+              <th>End Date</th> 
+              <th>Total Rent</th>
+              <!-- <th>Color</th> -->
+              <!-- Add more headers as needed -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rental of oldRecords">
+              <td>{{ rental.model }}</td>
+              <td>{{ rental.brand }}</td>
+              <td>{{ rental.registrationNumber }}</td>
+              <td>{{ rental.startDate }}</td>
+              <td>{{ rental.endDate }}</td>
+              <td>{{ rental.rentPerDay}}</td>
+              <!-- <td>{{ record.color }}</td> -->
+              <!-- Add more cells as needed -->
+            </tr>
+          </tbody>
+        </table>
+      
+      </div>
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; GoCar 2023</p>
+      </div>
+    </footer>
+  </section>
+  

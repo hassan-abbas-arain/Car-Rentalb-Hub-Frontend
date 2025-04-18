@@ -1,0 +1,80 @@
+<section>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" (click)="OnClikedHome()">GoCar</a>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li >
+                        <a class="nav-link" (click)="OnClikedHome()" >Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="OnClikedCar()">Cars</a>
+                    </li>
+                    <li class="nav-item" class="nav-item active">       
+                        <a class="nav-link" (click)="OnClikedApprove()">Cars to be Approve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"(click)="OnClikedPartner()">Partner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- admin-component.component.html -->
+
+<!-- admin-component.component.html -->
+    
+<div  class="container mt-5 pt-4" >
+<h2>Cars to be Approved</h2>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Partner Name</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Registration Number</th>
+            <th>Year</th>
+            <th>Color</th>
+            <!-- Add more headers as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of tempCars">
+            <td>{{ car.id }}</td>
+            <td> {{car.partnerFirstName}} {{car.partnerLastName}}</td>
+            <td>{{ car.brand }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.registrationNumber }}</td>
+            <td>{{ car.year }}</td>
+            <td>{{ car.color }}</td>
+            <td>
+                <!-- Add buttons for Approve and Disapprove -->
+                <button class="btn btn-success" (click)="approveCar(car.id)">Approve</button>
+                <button class="btn btn-danger" (click)="disapproveCar(car.id)">Disapprove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+  </div>
+  
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoCar 2023</p>
+        </div>
+    </footer>
+</section>

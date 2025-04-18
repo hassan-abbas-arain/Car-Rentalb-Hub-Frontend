@@ -1,0 +1,11 @@
+<div class="dialog-container">
+    <h1 *ngIf="dialogType === '1'">The car can not be reserved</h1>
+  
+    <h1 *ngIf="dialogType === '2'">Registration number already used</h1>
+  
+    <!-- Repeat for other dialog types -->
+  
+    <!-- Close button or any other common buttons -->
+    <button (click)="closeDialog()">Close</button>
+  </div>
+  

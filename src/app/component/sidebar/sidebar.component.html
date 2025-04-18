@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header d-flex align-items-center">
+      <img src="../../../assets/icon/Database.png" alt="" />
+      <div>
+        <p>Sierra Ferguson</p>
+      </div>
+    </div>
+
+    <ul class="list-unstyled components">
+      <li
+        *ngFor="let item of sidebarItems"
+        [ngClass]="{ active: activeItem === item }"
+      >
+        <a (click)="setActiveItem(item)">
+          <img src="{{ item.image }}" alt="" class="ml-2" />
+          {{ item.label }}</a
+        >
+        <ul *ngIf="activeItem === item">
+          <li
+            class="list-unstyled components"
+            *ngFor="let subItem of item.submenu"
+          >
+            <a href="#">{{ subItem }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

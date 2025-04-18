@@ -1,0 +1,55 @@
+<section>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" (click)="goToAdminComponent()">GoCar</a>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" (click)="OnClikedHome()" >Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="OnClikedCar()">Cars</a>
+                    </li>
+                    <li class="nav-item">       
+                        <a class="nav-link" (click)="OnClikedApprove()">Car to Approve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="OnClikedPartner()">Partner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- admin-component.component.html -->
+
+<!-- admin-component.component.html -->
+<router-outlet>
+     
+  <div class="container"></div>
+  <div class="text-center" style="margin-top: 100px">
+    <h1 class="display-4">Welcome <span id="username"> {{adminDetails.firstName}} {{adminDetails.lastName}}!</span></h1>
+    <h2>Total Revenue</h2>
+    <h3 id="totalRentPlaceholder">{{totalRent*0.6}}</h3>
+    <img src="../../../assets/Image/usercar.jpg" alt="Car" />
+  </div>
+
+
+</router-outlet>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark" >
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoCar 2023</p>
+        </div>
+    </footer>
+</section>
